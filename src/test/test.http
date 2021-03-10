@@ -1,0 +1,218 @@
+POST http://localhost:8080/measurement
+Content-Type: application/json
+
+{
+  "name": "KG"
+}
+
+###
+GET http://localhost:8080/measurement
+
+###
+DELETE http://localhost:8080/measurement/1
+
+###
+PUT http://localhost:8080/measurement/2
+Content-Type: application/json
+
+{
+  "name": "Gramm"
+}
+
+###
+POST http://localhost:8080/category
+Content-Type: application/json
+
+{
+  "name": "Electronics"
+}
+###
+GET http://localhost:8080/category
+
+###
+GET http://localhost:8080/category
+
+###
+DELETE http://localhost:8080/category/7
+###
+PUT http://localhost:8080/category/11
+Content-Type: application/json
+
+{
+  "name": "Apple watches"
+}
+
+###
+POST http://localhost:8080/supplier
+Content-Type:  application/json
+
+{
+  "name": "Nepal Tog'lari ",
+  "phoneNumber": "+998885856005"
+}
+
+###
+GET http://localhost:8080/supplier?page=0
+
+###
+PUT http://localhost:8080/supplier/12
+Content-Type: application/json
+
+{
+  "name": "YATT XXX XXX XXX",
+  "phoneNumber": "+8441661515665"
+}
+
+###
+POST http://localhost:8080/wareHouse
+Content-Type: application/json
+
+{
+  "name": "Sklad 03"
+}
+
+###
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "firstName":"Sukhrob",
+  "lastName":"Ibrokhimov",
+  "phoneNumber":"+98561454",
+  "code":1,
+  "password":"123",
+  "wareHouseId": [1]
+}
+
+###
+GET http://localhost:8080/users?page=0
+###
+GET http://localhost:8080/users/bywarehouseId/1
+
+###
+GET http://localhost:8080/wareHouse?page=0
+
+###
+DELETE http://localhost:8080/users/1
+
+###
+PUT http://localhost:8080/users/editWarehouse/3
+Content-Type: application/json
+
+{
+  "wareHouseId": []
+}
+
+###
+POST http://localhost:8080/product
+Content-Type: application/json
+
+{
+  "name": "Samsung galaxy",
+  "categoryId": 1,
+  "photoId": 1,
+  "measurementId": 1
+}
+
+###
+GET http://localhost:8080/product?page=0
+###
+DELETE http://localhost:8080/product/1
+###
+GET http://localhost:8080/product/byCategoryId/15
+###
+PUT http://localhost:8080/product/editInfo/2
+Content-Type: application/json
+
+{
+  "name": "Xiaomi Redmi",
+  "categoryId": 8,
+  "photoId": 4,
+  "measurementId": 1
+}
+###
+PUT http://localhost:8080/product/changeCode/2
+Content-Type: application/json
+
+{
+  "code": 5
+}
+
+###
+POST http://localhost:8080/currency
+Content-Type: application/json
+
+{
+  "name": "Dollar$"
+}
+###
+POST http://localhost:8080/input
+Content-Type: application/json
+
+{
+  "warehouseId":1,
+  "supplierId":1,
+  "currencyId":1,
+  "factureNumber":"A646X646"
+}
+
+###
+GET http://localhost:8080/input?page=0
+###
+DELETE http://localhost:8080/input/1
+###
+POST http://localhost:8080/client
+Content-Type: application/json
+
+{
+  "name": "Sukhrob",
+  "phoneNumber": "+9985456165145"
+}
+###
+PUT http://localhost:8080/input/1
+Content-Type: application/json
+
+{
+  "warehouseId":1,
+  "supplierId":1,
+  "currencyId":1,
+  "factureNumber":"A64645646"
+}
+
+###
+POST http://localhost:8080/inputProduct
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "amount": 5.0,
+  "price": 15000.00,
+  "expireDate": "2021-12-30T00:00:00",
+  "inputId": 1
+}
+###
+GET http://localhost:8080/inputProduct?page=0
+
+###
+POST http://localhost:8080/output
+Content-Type: application/json
+
+{
+  "wareHouseId":1,
+  "clientId":1,
+  "currencyId":1,
+  "factureNumber":"A6464545646"
+}
+###
+GET http://localhost:8080/output/byCurrency/1
+###
+POST http://localhost:8080/outputProduct
+Content-Type: application/json
+
+{
+  "productId":1,
+  "outputId":1,
+  "amount": 250.00,
+  "price": 3600.00
+
+}
